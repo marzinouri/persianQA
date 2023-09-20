@@ -38,3 +38,7 @@ answer = qa_pipeline(question=question, context=context)
 
 print("Answer:", answer["answer"])
 ```
+
+## Acknowledgments
+
+I would like to express my gratitude to the authors of the [Hugging Face question_answering example notebook](https://github.com/huggingface/notebooks/blob/main/examples/question_answering.ipynb). Their work served as a valuable reference and source of inspiration for the development of this Persian Question Answering System.
