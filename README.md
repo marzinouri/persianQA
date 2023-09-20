@@ -21,3 +21,19 @@ These hyperparameters resulted in the following performance metrics:
 
 It's worth noting that due to limitations in computational resources, larger batch sizes could not be used during the fine-tuning process.
 
+## Testing the Model Online
+
+You can easily test the Persian Question Answering System model online using the Hugging Face API. Here's an example of how to do it using Python:
+
+```python
+from transformers import pipeline
+qa_pipeline = pipeline("question-answering", model="marzinouri/parsbert-finetuned-persianQA")
+
+context = "مطالبه‌ی هویت در فضای مجازی یکی از مسائل مهم و پیچیده‌ای است که به طور متناوب مطرح می‌شود. افراد و سازمان‌ها به دنبال اعتبار و شناخته شدن در فضای مجازی هستند و این امر می‌تواند به وسیله‌ی تولید محتوای ارزشمند، فعالیت‌های اجتماعی و تعامل با دیگران بهبود یابد."
+
+question = "چگونه افراد و سازمان‌ها می‌توانند در فضای مجازی به اعتبار و شناخته شدن دست یابند؟"
+
+answer = qa_pipeline(question=question, context=context)
+
+print("Answer:", answer["answer"])
+```
