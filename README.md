@@ -27,11 +27,12 @@ You can easily test the Persian Question Answering System model online using the
 
 ```python
 from transformers import pipeline
+
 qa_pipeline = pipeline("question-answering", model="marzinouri/parsbert-finetuned-persianQA")
 
-context = "مطالبه‌ی هویت در فضای مجازی یکی از مسائل مهم و پیچیده‌ای است که به طور متناوب مطرح می‌شود. افراد و سازمان‌ها به دنبال اعتبار و شناخته شدن در فضای مجازی هستند و این امر می‌تواند به وسیله‌ی تولید محتوای ارزشمند، فعالیت‌های اجتماعی و تعامل با دیگران بهبود یابد."
+context = "پردازش زبان طبیعی یکی از حوزه‌های مهم در علوم کامپیوتر است که به تجزیه و تحلیل متون و متنوع‌سازی اطلاعات در زبان‌های انسانی می‌پردازد. این حوزه نه‌تنها در ترجمه ماشینی و تحلیل متون مفهومی بلکه در پرسش و پاسخ خودکار و تولید متن نیز کاربردهای بسیار دارد."
 
-question = "چگونه افراد و سازمان‌ها می‌توانند در فضای مجازی به اعتبار و شناخته شدن دست یابند؟"
+question = "چه مفاهیمی در پردازش زبان طبیعی مورد استفاده قرار می‌گیرند؟"
 
 answer = qa_pipeline(question=question, context=context)
 
